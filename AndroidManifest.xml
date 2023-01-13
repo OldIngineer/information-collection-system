@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.elektropribor.vozov.terminal7">
+
+    <!--приложение использует BLUETOOTH -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!--приложение может искать устройства и изменять настройки BLUETOOTH-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!--поиск локаций устройств-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+  <!--  <uses-feature android:name="android.hardware.location.gps"/>-->
+    <!--условие: приложение доступно только для устройств поддерживающих BLE
+    <use-feature android:name = "android.hardware.bluetooth_le"
+        android:required = "true" />-->
+    <!--приложение использует INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_er"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_er"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name=".db.App">
+        <!--запрет поворота экрана только для этой активности-->
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <!-- Сервис для обработки рекламы BLE-использование сервиса позволяет
+         рекламе продолжаться когда приложение больше не находится на экране
+         надежным образом
+         <service
+             android:name=".AdvertiserService"
+             android:enabled="true"
+             android:exported="false" >
+         </service> -->
+    </application>
+
+
+</manifest>
