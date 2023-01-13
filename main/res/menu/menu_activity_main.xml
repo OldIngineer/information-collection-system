@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.elektropribor.vozov.terminal7.MainActivity" >
+    <item
+        android:id="@+id/settings"
+        android:title="@string/action_settings" />
+    <!-- menu group2 -->
+    <group android:id="@+id/group2">
+    <item
+        android:id="@+id/main_settings"
+        android:title="@string/main_settings"
+        app:showAsAction="never">
+    <!-- под/меню для настроек -->
+        <menu>
+            <item
+                android:id="@+id/identification_data"
+                android:title="@string/entering_identification_data"/>
+        </menu>
+    </item>
+    </group>
+    <!-- menu group1 -->
+    <group android:id="@+id/group1">
+    <item
+        android:id="@+id/sort_event_list"
+        android:title="@string/sort_event_list"
+        app:showAsAction="never">
+        <!-- под/меню для списка событий -->
+        <menu>
+        <item
+            android:id="@+id/sort_date_up"
+            android:title="@string/sort_date_up" />
+        <item
+            android:id="@+id/sort_date_down"
+            android:title="@string/sort_date_down" />
+    <!--    не реализовано
+        <item
+            android:id="@+id/sort_date"
+            android:title="@string/sort_date" />
+        <item
+            android:id="@+id/sort_name_device"
+            android:title="@string/sort_name_device" />
+        <item
+            android:id="@+id/sort_sn_device"
+            android:title="@string/sort_sn_device" />
+        <item
+            android:id="@+id/sort_kod_event"
+            android:title="@string/sort_kod_event" />
+    -->
+        </menu>
+    </item>
+   </group>
+ </menu>
